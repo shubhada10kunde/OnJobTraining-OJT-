@@ -16,7 +16,7 @@ bool isValid(string s)
         }
         else if (s[i] == ')')
         {
-            if (stk.top() == '(')
+            if (!stk.empty() && stk.top() == '(')
             {
                 stk.pop();
             }
@@ -51,11 +51,15 @@ bool isValid(string s)
             }
         }
     }
-}
+    if (!stk.empty())
+        return false;
+    else
+        return answer;
+};
 
 int main()
 {
-    string s = "{([])}";
+    string s = "{([]})";
 
     if (isValid(s))
     {
