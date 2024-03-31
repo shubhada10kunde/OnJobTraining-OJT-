@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 class Solution
 {
 public:
@@ -5,31 +8,37 @@ public:
     {
         int size = chars.size();
         int count = 1;
-        string ans;
+        int j = 0;
+
+        if (size == 1)
+        {
+            return 1;
+        }
 
         for (int i = 1; i <= size; i++)
         {
+            count = 1;
             if (i < size && chars[i] == chars[i - 1])
             {
                 count++;
-            }
-            else
-            {
-                if (count == 1)
+                i++;
+                while (i < size && chars[i] == chars[i - 1])
                 {
-                    ans.push_back(chars[i - 1]);
+                    count++;
+                    i++;
                 }
-                else
+            }
+            chars[j++] = chars[i - 1];
+            if (count > 1)
+            {
+                string c = to_string(count);
+                for (auto ch : c)
                 {
-                    ans.push_back(char[i - 1]);
-                    string c = to_string(count);
-                    for (auto ch : c)
-                    {
-                        ans.push_back((char)ch);
-                    }
-                    count = 1;
+                    chars[j++] = (char)ch;
                 }
             }
         }
+
+        return j;
     }
 };
