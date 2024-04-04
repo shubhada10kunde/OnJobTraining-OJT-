@@ -32,7 +32,7 @@ public:
             // Update the maximum length of subarray
             ans = max(ans, j - i + 1);
 
-            j++; // Move the right pointer
+            // j++; // Move the right pointer
         }
         return ans;
     }
