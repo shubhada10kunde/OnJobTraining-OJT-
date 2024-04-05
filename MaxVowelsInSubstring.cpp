@@ -19,8 +19,7 @@ public:
 
         MaxVowels = WindowVowels;
 
-        // slide the window and update the maximum number of vowels
-        for (int i = k; i < s.size(); i++)
+        slide the window and update the maximum number of vowels for (int i = k; i < s.size(); i++)
         {
             if (vowels.count(s[i - k]))
                 WindowVowels--;
