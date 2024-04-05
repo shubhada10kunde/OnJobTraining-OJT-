@@ -42,3 +42,27 @@ public:
         return j;
     }
 };
+
+int main()
+{
+    Solution solution;
+
+    // Example usage:
+    vector<char> chars1 = {'a', 'a', 'b', 'b', 'c', 'c', 'c'};
+    cout << "Original vector: ";
+    for (char c : chars1)
+    {
+        cout << c << " ";
+    }
+    cout << endl;
+
+    int newLength = solution.compress(chars1);
+    cout << "Compressed vector: ";
+    for (int i = 0; i < newLength; ++i)
+    {
+        cout << chars1[i] << " ";
+    }
+    cout << endl;
+
+    // return 0;
+}
